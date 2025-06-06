@@ -56,7 +56,7 @@ main h2 {
   font-size: 1.8rem;
   margin-bottom: 0.7rem;
   /* animation: flicker 3s infinite alternate; */
-  animation: vibrate 0.3s linear infinite;
+  animation: flicker-vibrate 1.5s linear infinite;
 }
 
 /* Paragrafi e liste con colore e dimensioni leggibili */
