@@ -113,7 +113,7 @@ footer {
 }
 
 /* Applichiamo l’animazione flicker solo a h1 e h2 */
-h1, h2 {
+h1 {
   animation: flicker 3s infinite alternate;
 }
 
@@ -206,84 +206,4 @@ footer:hover .hidden-cat {
   opacity: 1;
   pointer-events: auto;
   animation: flicker 3s infinite alternate;
-}
-
-/* ---- Nuove animazioni flicker distinte per evitare sincronizzazione ---- */
-
-@keyframes flicker1 {
-  0%, 18%, 20%, 22%, 24%, 52%, 54%, 100% {
-    text-shadow:
-      0 0 7px #0ff,
-      0 0 20px #0ff,
-      0 0 30px #0ff,
-      0 0 40px #0ff,
-      0 0 50px #0ff;
-    color: #0ff;
-  }
-  19%, 21%, 23%, 53% {
-    text-shadow: none;
-    color: #033;
-  }
-}
-
-@keyframes flicker2 {
-  0%, 15%, 17%, 21%, 25%, 50%, 55%, 100% {
-    text-shadow:
-      0 0 6px #0ff,
-      0 0 18px #0ff,
-      0 0 28px #0ff,
-      0 0 38px #0ff,
-      0 0 48px #0ff;
-    color: #0ff;
-  }
-  16%, 18%, 20%, 22%, 24%, 51%, 54% {
-    text-shadow: none;
-    color: #022;
-  }
-}
-
-@keyframes flicker3 {
-  0%, 17%, 19%, 23%, 27%, 53%, 56%, 100% {
-    text-shadow:
-      0 0 8px #0ff,
-      0 0 22px #0ff,
-      0 0 32px #0ff,
-      0 0 42px #0ff,
-      0 0 52px #0ff;
-    color: #0ff;
-  }
-  18%, 20%, 22%, 24%, 26%, 54%, 55% {
-    text-shadow: none;
-    color: #044;
-  }
-}
-
-/* Classi per applicare animazioni flicker diverse */
-.flicker1 {
-  animation: flicker1 3s infinite alternate;
-}
-
-.flicker2 {
-  animation: flicker2 3s infinite alternate;
-}
-
-.flicker3 {
-  animation: flicker3 3s infinite alternate;
-}
-
-/* Ora assegniamo flicker alternati a h1, h2 e gattino */
-
-/* Gattino */
-.hidden-cat {
-  /* Prima flicker */
-  /* Ora flicker3 */
-  animation: flicker3 3s infinite alternate;
-}
-
-/* Footer hover + focus per gattino */
-footer:hover .hidden-cat,
-.gattino-trigger:focus + .hidden-cat {
-  opacity: 1;
-  pointer-events: auto;
-  animation: flicker3 3s infinite alternate;
 }
