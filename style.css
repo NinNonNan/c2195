@@ -1,0 +1,107 @@
+body {
+  margin: 0; 
+  background: #0f0f14; 
+  color: #00ff66;
+  font-family: 'Share Tech Mono', monospace;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+header {
+  background: #001100;
+  padding: 2rem;
+  text-align: center;
+  border-bottom: 2px solid #00ff66;
+}
+
+header h1 {
+  margin: 0;
+  font-size: 3rem;
+  text-shadow:
+    0 0 5px #00ff66,
+    0 0 10px #00ff66,
+    0 0 20px #00ff66,
+    0 0 40px #00ff66;
+  animation: flicker 3s infinite;
+}
+
+header p {
+  margin-top: 0.5rem;
+  font-size: 1.2rem;
+  color: #33ff99;
+}
+
+main {
+  flex: 1;
+  padding: 2rem 4rem;
+  max-width: 900px;
+  margin: auto;
+}
+
+section {
+  margin-bottom: 3rem;
+}
+
+h2 {
+  border-left: 5px solid #00ff66;
+  padding-left: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+  color: #00ff66;
+  text-shadow:
+    0 0 3px #00ff66,
+    0 0 8px #00ff66;
+  animation: flicker 3s infinite;
+}
+
+p {
+  line-height: 1.5;
+  color: #aaffbb;
+}
+
+ul {
+  list-style-type: none;
+  padding-left: 0;
+  color: #55ff88;
+}
+
+ul li {
+  margin: 0.5rem 0;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  text-shadow: 0 0 4px #00ff66;
+  animation: flicker 3s infinite;
+}
+
+.link {
+  color: #00ff66;
+  text-decoration: underline;
+}
+
+footer {
+  text-align: center;
+  padding: 1rem;
+  background: #001100;
+  border-top: 2px solid #00ff66;
+  color: #007733;
+  font-size: 0.9rem;
+}
+
+/* Neon flicker animation */
+@keyframes flicker {
+  0%, 19%, 21%, 23%, 25%, 54%, 56%, 100% {
+    opacity: 1;
+    text-shadow:
+      0 0 5px #00ff66,
+      0 0 10px #00ff66,
+      0 0 20px #00ff66,
+      0 0 40px #00ff66;
+  }
+  20%, 22%, 24%, 55% {
+    opacity: 0.5;
+    text-shadow: none;
+  }
+}
