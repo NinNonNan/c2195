@@ -118,9 +118,8 @@ h1 {
   animation: flicker 3s infinite alternate;
 }
 
-@keyframes vibrate {
+@keyframes flicker-vibrate {
   0%, 100% {
-    transform: translate(0, 0);
     text-shadow:
       0 0 5px #0ff,
       0 0 10px #0ff,
@@ -129,7 +128,6 @@ h1 {
     color: #0ff;
   }
   25% {
-    transform: translate(-1px, 1px);
     text-shadow:
       0 0 7px #33ffff,
       0 0 14px #33ffff,
@@ -138,7 +136,6 @@ h1 {
     color: #33ffff;
   }
   50% {
-    transform: translate(1px, -1px);
     text-shadow:
       0 0 5px #0ff,
       0 0 10px #0ff,
@@ -147,7 +144,6 @@ h1 {
     color: #0ff;
   }
   75% {
-    transform: translate(-1px, 1px);
     text-shadow:
       0 0 7px #33ffff,
       0 0 14px #33ffff,
