@@ -193,6 +193,18 @@ footer {
   }
 }
 
+/* ========================== Disclaimer ========================== */
+.disclaimer {
+  font-size: 0.8rem;
+  color: #7ab8ffcc; /* un azzurro chiaro e trasparente */
+  max-width: 960px;
+  margin: 1rem auto 0;
+  text-align: center;
+  line-height: 1.4;
+  user-select: text;
+  font-style: normal;
+}
+
 /* ====================== Gattino Easter Egg ====================== */
 /* Trigger invisibile ma accessibile per il gattino */
 .gattino-trigger {
