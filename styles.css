@@ -112,21 +112,23 @@ footer {
   bottom: 10px;
   right: 10px;
   font-size: 2.5rem;
-  color: #00ccff; /* blu elettrico neon */
+  color: #00ccff;
   text-shadow:
     0 0 5px #00ccff,
     0 0 10px #00ccff,
     0 0 20px #00ccff,
     0 0 40px #00ccff;
   animation: flicker 3s infinite;
-  cursor: default;
-  user-select: none;
-  opacity: 0.7;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+  pointer-events: none; /* non interferisce col mouse */
 }
 
-footer:hover .hidden-cat {
-  opacity: 1;
-  pointer-events: auto; /* diventa interattivo */
+/* Quando si passa col mouse su tutto il body (o un'area specifica) */
+body:hover .hidden-cat {
+  opacity: 0.7;
+  pointer-events: auto;
+  cursor: default;
 }
 
 /* --- ANIMAZIONE NEON FLICKER --- */
