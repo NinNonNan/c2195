@@ -107,6 +107,23 @@ footer {
   margin-top: auto; /* per stare in fondo se la pagina è corta */
 }
 
+.hidden-cat {
+  position: fixed; /* rimane sempre visibile in basso a destra */
+  bottom: 10px;
+  right: 10px;
+  font-size: 2rem;
+  opacity: 0;
+  pointer-events: none; /* non interferisce col mouse */
+  transition: opacity 0.3s ease;
+  cursor: default;
+  user-select: none;
+}
+
+footer:hover .hidden-cat {
+  opacity: 1;
+  pointer-events: auto; /* diventa interattivo */
+}
+
 /* --- ANIMAZIONE NEON FLICKER --- */
 @keyframes flicker {
   0%, 19%, 21%, 23%, 25%, 54%, 56%, 100% {
