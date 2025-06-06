@@ -1,51 +1,101 @@
-/* --- Reset e base pagina --- */
-body {
-  margin: 0; /* elimina margini di default */
-  background: #0f0f14; /* sfondo scuro quasi nero */
-  color: #00ccff; /* blu elettrico per il testo */
-  font-family: 'Share Tech Mono', monospace; /* font monospace futuristico */
-  min-height: 100vh; /* altezza minima viewport per footer che sta sotto */
-  display: flex;
-  flex-direction: column; /* impila header, container, footer verticalmente */
-}
-
-/* --- HEADER --- *//* Font e reset base */
-body {
-  font-family: 'Share Tech Mono', monospace, monospace;
-  background: #001122;
-  color: #eee;
+/* Reset base: togliamo margini e padding di default e impostiamo box-sizing */
+* {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
 }
 
-a.link {
-  color: #0ff;
-  text-decoration: none;
-}
-a.link:hover,
-a.link:focus {
-  text-decoration: underline;
-  outline: none;
-}
-
-/* Container per il contenuto centrale */
-.container {
-  max-width: 960px;
-  margin: 0 auto;
-  padding: 1rem;
-  background: #002233;
+/* Stile generale del body: font, colore, sfondo e layout flex per altezza */
+body {
+  font-family: 'Share Tech Mono', monospace;
+  background-color: #001122; /* blu notte scuro */
+  color: #a0d8f7; /* azzurro chiaro */
+  line-height: 1.6;
+  min-height: 100vh; /* almeno tutta l’altezza viewport */
+  display: flex;
+  flex-direction: column;
 }
 
-/* Header e Footer full width */
-header, footer {
+/* Header full width: si estende su tutta la pagina */
+header {
   width: 100%;
-  background: #001122;
-  color: #0ff;
-  padding: 1rem 0;
+  background: #001122; /* stesso sfondo per uniformità */
+  padding: 1.5rem 2rem;
+  border-bottom: 2px solid #0ff; /* bordo neon azzurro */
   text-align: center;
 }
 
-/* Effetto flickering neon solo su h1 e h2 */
+/* Titolo principale con effetto flicker neon */
+header h1 {
+  font-size: 2.5rem;
+  margin-bottom: 0.3rem;
+  animation: flicker 3s infinite alternate;
+}
+
+/* Sottotitolo con colore più chiaro e trasparente */
+header p {
+  font-size: 1.2rem;
+  color: #66aaffcc;
+}
+
+/* Container centrale per il contenuto: max-width + margini auto per centrare */
+.container {
+  max-width: 960px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+  flex: 1; /* permette al contenuto di occupare lo spazio verticale */
+}
+
+/* Spaziatura tra sezioni */
+main section {
+  margin-bottom: 2rem;
+}
+
+/* Titoli secondari h2 con flicker neon */
+main h2 {
+  font-size: 1.8rem;
+  margin-bottom: 0.7rem;
+  animation: flicker 3s infinite alternate;
+}
+
+/* Paragrafi e liste con colore e dimensioni leggibili */
+p, ul {
+  font-size: 1rem;
+  color: #a0d8f7;
+}
+
+/* Liste con pallini */
+ul {
+  list-style: disc inside;
+}
+
+/* Link colorati neon */
+a.link {
+  color: #0ff;
+  text-decoration: underline;
+}
+
+/* Effetto hover e focus per i link, con colore più acceso */
+a.link:hover,
+a.link:focus {
+  color: #66ffff;
+  outline: none;
+}
+
+/* Footer full width, simile all’header */
+footer {
+  width: 100%;
+  background: #001122;
+  border-top: 2px solid #0ff;
+  color: #a0d8f7;
+  padding: 1rem 2rem;
+  text-align: center;
+  position: relative; /* per posizionare il trigger gattino */
+  font-size: 0.9rem;
+  user-select: none; /* impedisce di selezionare il testo del footer */
+}
+
+/* Animazione flicker neon per titoli e gattino */
 @keyframes flicker {
   0%, 19%, 21%, 23%, 25%, 54%, 56%, 100% {
     text-shadow:
@@ -62,49 +112,47 @@ header, footer {
   }
 }
 
+/* Applichiamo l’animazione flicker solo a h1 e h2 */
 h1, h2 {
   animation: flicker 3s infinite alternate;
 }
 
-/* Migliore leggibilità dei titoli */
-h1 {
-  font-size: 2.5rem;
-  margin-bottom: 0.2rem;
-}
-h2 {
-  font-size: 1.8rem;
-  margin-top: 1.5rem;
-  margin-bottom: 0.5rem;
-}
-
-/* Liste */
-ul {
-  padding-left: 1.5rem;
-  line-height: 1.5;
-}
-
-/* Footer gattino */
-
+/* Trigger invisibile ma accessibile per il gattino (easter egg) */
 .gattino-trigger {
-  display: inline-block;
+  position: absolute;
   width: 2rem;
   height: 2rem;
-  margin-left: 1rem;
-  vertical-align: middle;
-  background: transparent;
+  left: -9999px; /* posizionato fuori dallo schermo */
+  overflow: hidden;
+  clip: rect(0 0 0 0); /* nasconde completamente */
+  clip-path: inset(50%);
+  white-space: nowrap;
+  border: none;
+  padding: 0;
+  margin: 0;
+  opacity: 0;
+  pointer-events: auto; /* resta interattivo da tastiera */
+}
+
+/* Quando il trigger ha il focus (accessibilità tastiera), diventa visibile */
+.gattino-trigger:focus {
+  position: static;
+  width: 2rem;
+  height: 2rem;
+  clip: auto;
+  clip-path: none;
+  opacity: 1;
   border: 2px solid #0ff;
   border-radius: 4px;
   cursor: pointer;
-  position: relative;
   outline-offset: 3px;
+  background: transparent;
+  display: inline-block;
+  vertical-align: middle;
+  transition: opacity 0.3s ease-in-out;
 }
 
-/* Focus visibile per accessibilità */
-.gattino-trigger:focus {
-  outline: 3px solid #0ff;
-}
-
-/* Gattino nascosto inizialmente */
+/* Il gattino nascosto, inizialmente invisibile */
 .hidden-cat {
   display: inline-block;
   margin-left: 0.5rem;
@@ -120,188 +168,10 @@ ul {
   user-select: none;
 }
 
-/* Mostra il gattino quando si passa col mouse o si focalizza il trigger */
+/* Quando il trigger è hoverato o focusato, mostra il gattino con flicker */
 .gattino-trigger:hover + .hidden-cat,
 .gattino-trigger:focus + .hidden-cat {
   opacity: 1;
   pointer-events: auto;
   animation: flicker 3s infinite alternate;
-}
-
-/* Screen reader only class per testo nascosto */
-.sr-only {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  padding: 0;
-  margin: -1px;
-  overflow: hidden;
-  clip: rect(0, 0, 0, 0);
-  border: 0;
-}
-
-/* Header prende tutta la larghezza della pagina */
-header {
-  background: #001122; /* blu molto scuro */
-  padding: 2rem;
-  text-align: center;
-  border-bottom: 2px solid #00ccff; /* linea neon blu elettrico sotto */
-}
-
-/* Titolo principale nell'header con flicker */
-header h1 {
-  margin: 0;
-  font-size: 3rem;
-  /* Ombra neon che "brilla" */
-  text-shadow:
-    0 0 5px #00ccff,
-    0 0 10px #00ccff,
-    0 0 20px #00ccff,
-    0 0 40px #00ccff;
-  animation: flicker 3s infinite; /* animazione flicker neon */
-}
-
-/* Sottotitolo nell'header senza animazione */
-header p {
-  margin-top: 0.5rem;
-  font-size: 1.2rem;
-  color: #33ddff; /* azzurro più chiaro */
-}
-
-/* --- CONTENITORE CENTRALE --- */
-/* Questo box centra il contenuto principale e limita larghezza */
-.container {
-  max-width: 900px; /* larghezza massima contenuto */
-  margin: 2rem auto; /* margine verticale + centratura orizzontale */
-  padding: 1rem 2rem; /* padding interno */
-  background: #111827; /* sfondo scuro per evidenziare box */
-  border-radius: 8px; /* angoli arrotondati */
-  box-shadow: 0 0 15px #00ccff55; /* leggero alone neon blu */
-}
-
-/* --- MAIN CONTENT --- */
-main {
-  display: flex;
-  flex-direction: column;
-  gap: 2rem; /* spazio tra le sezioni */
-}
-
-/* Titoli sezioni con flicker */
-h2 {
-  border-left: 5px solid #00ccff; /* barra blu neon a sinistra */
-  padding-left: 0.8rem;
-  text-transform: uppercase;
-  letter-spacing: 2px;
-  font-size: 1.8rem;
-  margin-bottom: 1rem;
-  color: #00ccff;
-  /* Ombra neon per risalto */
-  text-shadow:
-    0 0 3px #00ccff,
-    0 0 8px #00ccff;
-  animation: flicker 3s infinite; /* flicker neon */
-}
-
-/* Liste non numerate senza animazione */
-ul {
-  list-style-type: none; /* elimina pallini */
-  padding-left: 0;
-  color: #33ccff; /* azzurro chiaro */
-}
-
-/* Elementi delle liste senza animazione */
-ul li {
-  margin: 0.5rem 0;
-  text-transform: uppercase;
-  letter-spacing: 1.5px;
-  /* Ombra neon per testo */
-  text-shadow: 0 0 4px #00ccff;
-  /* NO animation */
-}
-
-/* Link stilizzati senza animazione */
-.link {
-  color: #00ccff;
-  text-decoration: underline;
-}
-
-/* --- FOOTER --- */
-/* Footer full width come header */
-footer {
-  text-align: center;
-  padding: 1rem;
-  background: #001122;
-  border-top: 2px solid #00ccff;
-  color: #005577; /* blu più scuro */
-  font-size: 0.9rem;
-  margin-top: auto; /* per stare in fondo se la pagina è corta */
-}
-
-/* Area invisibile per attivare il gattino */
-.gattino-trigger {
-  position: fixed;
-  bottom: 10px;
-  right: 10px;
-  width: 40px;
-  height: 40px;
-  cursor: pointer;
-  /* Opzionale: per testare il trigger metti background temporaneo */
-  /* background: rgba(0, 204, 255, 0.1); */
-  z-index: 1000;
-}
-
-/* Gattino nascosto di default */
-.hidden-cat {
-  position: fixed;
-  bottom: 60px; /* sopra il trigger */
-  right: 10px;
-  font-size: 3rem;
-  color: #00ccff; /* blu elettrico neon */
-  text-shadow:
-    0 0 5px #00ccff,
-    0 0 10px #00ccff,
-    0 0 20px #00ccff,
-    0 0 40px #00ccff;
-  animation: flicker 3s infinite;
-  display: none; /* nascosto */
-  user-select: none;
-  pointer-events: none;
-  z-index: 1001;
-}
-
-/* Al passaggio del mouse sul trigger, mostra il gattino */
-.gattino-trigger:hover + .hidden-cat {
-  display: block;
-}
-
-/* Neon flicker animation */
-@keyframes flicker {
-  0%, 19%, 21%, 23%, 25%, 54%, 56%, 100% {
-    opacity: 1;
-    text-shadow:
-      0 0 5px #00ccff,
-      0 0 10px #00ccff,
-      0 0 20px #00ccff,
-      0 0 40px #00ccff;
-  }
-  20%, 22%, 24%, 55% {
-    opacity: 0.5;
-    text-shadow: none;
-  }
-}
-
-/* --- ANIMAZIONE NEON FLICKER --- */
-@keyframes flicker {
-  0%, 19%, 21%, 23%, 25%, 54%, 56%, 100% {
-    opacity: 1;
-    text-shadow:
-      0 0 5px #00ccff,
-      0 0 10px #00ccff,
-      0 0 20px #00ccff,
-      0 0 40px #00ccff;
-  }
-  20%, 22%, 24%, 55% {
-    opacity: 0.5;
-    text-shadow: none;
-  }
 }
