@@ -175,3 +175,35 @@ h1, h2 {
   pointer-events: auto;
   animation: flicker 3s infinite alternate;
 }
+
+/* ------------------- PARTE AGGIUNTA PER GESTIRE IL GATTO ------------------- */
+
+/* Posizioniamo il gattino nel footer a destra */
+footer {
+  position: relative; /* già presente ma confermiamo */
+}
+
+/* Posizionamento assoluto del gattino nel footer */
+.hidden-cat {
+  position: absolute;
+  right: 1.5rem;
+  top: 50%;
+  transform: translateY(-50%);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease-in-out;
+}
+
+/* Quando si passa il mouse sul footer, il gattino appare con animazione flicker */
+footer:hover .hidden-cat {
+  opacity: 1;
+  pointer-events: auto;
+  animation: flicker 3s infinite alternate;
+}
+
+/* Quando il trigger ha il focus, il gattino appare */
+.gattino-trigger:focus + .hidden-cat {
+  opacity: 1;
+  pointer-events: auto;
+  animation: flicker 3s infinite alternate;
+}
