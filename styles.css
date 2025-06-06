@@ -18,7 +18,7 @@ header {
   border-bottom: 2px solid #00ccff; /* linea neon blu elettrico sotto */
 }
 
-/* Titolo principale nell'header */
+/* Titolo principale nell'header con flicker */
 header h1 {
   margin: 0;
   font-size: 3rem;
@@ -31,7 +31,7 @@ header h1 {
   animation: flicker 3s infinite; /* animazione flicker neon */
 }
 
-/* Sottotitolo nell'header */
+/* Sottotitolo nell'header senza animazione */
 header p {
   margin-top: 0.5rem;
   font-size: 1.2rem;
@@ -56,7 +56,7 @@ main {
   gap: 2rem; /* spazio tra le sezioni */
 }
 
-/* Titoli sezioni */
+/* Titoli sezioni con flicker */
 h2 {
   border-left: 5px solid #00ccff; /* barra blu neon a sinistra */
   padding-left: 0.8rem;
@@ -72,24 +72,24 @@ h2 {
   animation: flicker 3s infinite; /* flicker neon */
 }
 
-/* Liste non numerate */
+/* Liste non numerate senza animazione */
 ul {
   list-style-type: none; /* elimina pallini */
   padding-left: 0;
   color: #33ccff; /* azzurro chiaro */
 }
 
-/* Elementi delle liste */
+/* Elementi delle liste senza animazione */
 ul li {
   margin: 0.5rem 0;
   text-transform: uppercase;
   letter-spacing: 1.5px;
   /* Ombra neon per testo */
   text-shadow: 0 0 4px #00ccff;
-  animation: flicker 3s infinite;
+  /* NO animation */
 }
 
-/* Link stilizzati */
+/* Link stilizzati senza animazione */
 .link {
   color: #00ccff;
   text-decoration: underline;
