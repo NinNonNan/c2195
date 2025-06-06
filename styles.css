@@ -273,23 +273,6 @@ footer:hover .hidden-cat {
 
 /* Ora assegniamo flicker alternati a h1, h2 e gattino */
 
-/* Titolo principale */
-header h1 {
-  font-size: 2.5rem;
-  margin-bottom: 0.3rem;
-  /* prima era animation: flicker ... */
-  /* Ora alterniamo flicker1 */
-  animation: flicker1 3s infinite alternate;
-}
-
-/* Sottotitoli h2 */
-main h2 {
-  font-size: 1.8rem;
-  margin-bottom: 0.7rem;
-  /* alterniamo flicker2 */
-  animation: flicker2 3s infinite alternate;
-}
-
 /* Gattino */
 .hidden-cat {
   /* Prima flicker */
