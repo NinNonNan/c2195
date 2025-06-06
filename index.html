@@ -21,8 +21,8 @@
 
   <div class="container">
     <main>
-      <section>
-        <h2>Introduzione al progetto</h2>
+      <section aria-labelledby="intro-title">
+        <h2 id="intro-title">Introduzione al progetto</h2>
         <p>Carbon 2195 è la dashboard centrale per le campagne di gioco di ruolo ambientate in un mondo cyberpunk distopico, dove tecnologia e società si scontrano in un futuro prossimo. Qui confluiscono le due campagne principali:</p>
         <ul>
           <li>Bleeding City (Palermo, 2195)</li>
@@ -30,26 +30,27 @@
         </ul>
       </section>
 
-      <section>
-        <h2>Visione</h2>
+      <section aria-labelledby="vision-title">
+        <h2 id="vision-title">Visione</h2>
         <p>Un’esperienza immersiva in un futuro tecnologico e oscuro, in cui ogni scelta cambia il destino. Un gioco che unisce narrazione, strategia e interazione continua.</p>
       </section>
 
-      <section>
-        <h2>Le campagne</h2>
+      <section aria-labelledby="campaigns-title">
+        <h2 id="campaigns-title">Le campagne</h2>
         <ul>
           <li><strong>Bleeding City</strong> – Palermo, 2195. Una metropoli corrotta e iperconnessa, teatro di conflitti tra megacorporazioni e resistenza underground.</li>
           <li><strong>Orbital Dystopia</strong> – La Stazione Spaziale Internazionale diventa l’arena di intrighi politici e lotte per il controllo tecnologico.</li>
         </ul>
       </section>
 
-      <section>
-        <h2>Regole di base</h2>
-        <p>Consulta il <a href="#" class="link">regolamento ufficiale</a>, con linee guida e disclaimer contro discriminazioni e pregiudizi.</p>
+      <section aria-labelledby="rules-title">
+        <h2 id="rules-title">Regole di base</h2>
+        <p>Consulta il <a href="#" class="link" aria-describedby="rule-desc">regolamento ufficiale</a>, con linee guida e disclaimer contro discriminazioni e pregiudizi.</p>
+        <span id="rule-desc" class="sr-only">Link al documento delle regole e linee guida per un gioco inclusivo.</span>
       </section>
 
-      <section>
-        <h2>Risorse</h2>
+      <section aria-labelledby="resources-title">
+        <h2 id="resources-title">Risorse</h2>
         <ul>
           <li><a href="#" class="link">Mappe</a></li>
           <li><a href="#" class="link">Schede personaggi</a></li>
@@ -58,23 +59,45 @@
         </ul>
       </section>
 
-      <section>
-        <h2>Team</h2>
+      <section aria-labelledby="team-title">
+        <h2 id="team-title">Team</h2>
         <p>Master e giocatori che portano vita e storia a Carbon 2195.</p>
       </section>
 
-      <section>
-        <h2>Contatti & Link</h2>
+      <section aria-labelledby="contacts-title">
+        <h2 id="contacts-title">Contatti &amp; Link</h2>
         <p>Discord ufficiale: <a href="#" class="link">link al server</a></p>
-        <p>Email: info@carbon2195.gdr</p>
+        <p>Email: <a href="mailto:info@carbon2195.gdr" class="link">info@carbon2195.gdr</a></p>
       </section>
     </main>
   </div>
 
   <footer>
     &copy; 2025 Carbon 2195 - Cyberpunk GDR Project
-    <div class="gattino-trigger" title="Passa il mouse qui per vedere il gattino"></div>
-    <div class="hidden-cat" title="Ecco un gattino nascosto!">🐱</div>
+
+    <!-- Trigger per il gattino -->
+    <button 
+      class="gattino-trigger" 
+      title="Mostra il gattino neon" 
+      aria-haspopup="true" 
+      aria-controls="hidden-cat"
+      aria-expanded="false"
+      aria-label="Mostra gattino neon nascosto"
+      onmouseenter="this.setAttribute('aria-expanded', 'true')" 
+      onmouseleave="this.setAttribute('aria-expanded', 'false')"
+    >
+      <!-- Vuoto, serve solo come area attiva -->
+    </button>
+
+    <div 
+      id="hidden-cat" 
+      class="hidden-cat" 
+      role="img" 
+      aria-label="Gattino neon cyberpunk"
+      aria-hidden="true"
+    >
+      🐱
+    </div>
   </footer>
 </body>
 </html>
