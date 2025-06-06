@@ -1,28 +1,29 @@
-/* Corpo della pagina: sfondo scuro, testo blu elettrico, font monospaziato */
-/* Flexbox verticale per layout generale */
+/* --- Reset e base pagina --- */
 body {
-  margin: 0; /* rimuove margini di default */
-  background: #0f0f14; /* sfondo quasi nero */
-  color: #00ccff; /* testo blu elettrico */
-  font-family: 'Share Tech Mono', monospace; /* font monospace in stile tech */
-  display: flex; /* attiva flexbox */
-  flex-direction: column; /* disporre gli elementi in colonna verticale */
-  min-height: 100vh; /* altezza minima: viewport intera */
+  margin: 0; /* elimina margini di default */
+  background: #0f0f14; /* sfondo scuro quasi nero */
+  color: #00ccff; /* blu elettrico per il testo */
+  font-family: 'Share Tech Mono', monospace; /* font monospace futuristico */
+  min-height: 100vh; /* altezza minima viewport per footer che sta sotto */
+  display: flex;
+  flex-direction: column; /* impila header, container, footer verticalmente */
 }
 
-/* Header: sfondo scuro, padding, testo centrato, bordo inferiore neon */
+/* --- HEADER --- */
+/* Header prende tutta la larghezza della pagina */
 header {
   background: #001122; /* blu molto scuro */
-  padding: 2rem; /* spazio interno */
-  text-align: center; /* testo centrato */
+  padding: 2rem;
+  text-align: center;
   border-bottom: 2px solid #00ccff; /* linea neon blu elettrico sotto */
 }
 
-/* Titolo nell'header: grande, nessun margine, effetto neon con ombra e flicker */
+/* Titolo principale nell'header */
 header h1 {
-  margin: 0; /* rimuove margine superiore/inferiore */
-  font-size: 3rem; /* dimensione molto grande */
-  text-shadow: /* ombra luminosa per effetto neon */
+  margin: 0;
+  font-size: 3rem;
+  /* Ombra neon che "brilla" */
+  text-shadow:
     0 0 5px #00ccff,
     0 0 10px #00ccff,
     0 0 20px #00ccff,
@@ -30,72 +31,94 @@ header h1 {
   animation: flicker 3s infinite; /* animazione flicker neon */
 }
 
-/* Paragrafo sotto titolo: margine superiore piccolo, colore azzurro più chiaro */
+/* Sottotitolo nell'header */
 header p {
-  margin-top: 0.5rem; /* piccolo spazio sopra */
-  font-size: 1.2rem; /* dimensione media */
-  color: #33ddff; /* azzurro chiaro */
+  margin-top: 0.5rem;
+  font-size: 1.2rem;
+  color: #33ddff; /* azzurro più chiaro */
 }
 
-/* Titoli di secondo livello: bordo sinistro neon, maiuscolo, spaziatura lettere */
+/* --- CONTENITORE CENTRALE --- */
+/* Questo box centra il contenuto principale e limita larghezza */
+.container {
+  max-width: 900px; /* larghezza massima contenuto */
+  margin: 2rem auto; /* margine verticale + centratura orizzontale */
+  padding: 1rem 2rem; /* padding interno */
+  background: #111827; /* sfondo scuro per evidenziare box */
+  border-radius: 8px; /* angoli arrotondati */
+  box-shadow: 0 0 15px #00ccff55; /* leggero alone neon blu */
+}
+
+/* --- MAIN CONTENT --- */
+main {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem; /* spazio tra le sezioni */
+}
+
+/* Titoli sezioni */
 h2 {
-  border-left: 5px solid #00ccff; /* barra neon a sinistra */
-  padding-left: 0.8rem; /* spazio tra bordo e testo */
-  text-transform: uppercase; /* tutto maiuscolo */
-  letter-spacing: 2px; /* distanza tra lettere */
-  font-size: 1.8rem; /* dimensione titolo */
-  margin-bottom: 1rem; /* spazio sotto */
-  color: #00ccff; /* blu elettrico */
-  text-shadow: /* ombra neon */
+  border-left: 5px solid #00ccff; /* barra blu neon a sinistra */
+  padding-left: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+  color: #00ccff;
+  /* Ombra neon per risalto */
+  text-shadow:
     0 0 3px #00ccff,
     0 0 8px #00ccff;
-  animation: flicker 3s infinite; /* animazione flicker */
+  animation: flicker 3s infinite; /* flicker neon */
 }
 
-/* Lista senza pallini e senza padding a sinistra, testo azzurro */
+/* Liste non numerate */
 ul {
-  list-style-type: none; /* elimina i marker standard */
-  padding-left: 0; /* rimuove padding */
-  color: #33ccff; /* colore azzurro */
+  list-style-type: none; /* elimina pallini */
+  padding-left: 0;
+  color: #33ccff; /* azzurro chiaro */
 }
 
-/* Elementi lista: margine verticale, maiuscolo, spaziatura, ombra neon flicker */
+/* Elementi delle liste */
 ul li {
-  margin: 0.5rem 0; /* spazio sopra e sotto */
-  text-transform: uppercase; /* maiuscolo */
-  letter-spacing: 1.5px; /* spaziatura lettere */
-  text-shadow: 0 0 4px #00ccff; /* ombra neon */
-  animation: flicker 3s infinite; /* animazione flicker */
+  margin: 0.5rem 0;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  /* Ombra neon per testo */
+  text-shadow: 0 0 4px #00ccff;
+  animation: flicker 3s infinite;
 }
 
-/* Link: colore blu elettrico, sottolineato */
+/* Link stilizzati */
 .link {
-  color: #00ccff; /* colore link */
-  text-decoration: underline; /* sottolineatura */
+  color: #00ccff;
+  text-decoration: underline;
 }
 
-/* Footer: testo centrato, sfondo scuro, bordo superiore neon, colore più scuro */
+/* --- FOOTER --- */
+/* Footer full width come header */
 footer {
-  text-align: center; /* testo centrato */
-  padding: 1rem; /* padding interno */
-  background: #001122; /* sfondo blu scuro */
-  border-top: 2px solid #00ccff; /* bordo superiore neon */
-  color: #005577; /* blu scuro più spento */
-  font-size: 0.9rem; /* testo più piccolo */
+  text-align: center;
+  padding: 1rem;
+  background: #001122;
+  border-top: 2px solid #00ccff;
+  color: #005577; /* blu più scuro */
+  font-size: 0.9rem;
+  margin-top: auto; /* per stare in fondo se la pagina è corta */
 }
 
-/* Animazione flicker per effetto neon lampeggiante */
+/* --- ANIMAZIONE NEON FLICKER --- */
 @keyframes flicker {
   0%, 19%, 21%, 23%, 25%, 54%, 56%, 100% {
-    opacity: 1; /* completamente visibile */
+    opacity: 1;
     text-shadow:
       0 0 5px #00ccff,
       0 0 10px #00ccff,
       0 0 20px #00ccff,
-      0 0 40px #00ccff; /* ombra neon */
+      0 0 40px #00ccff;
   }
   20%, 22%, 24%, 55% {
-    opacity: 0.5; /* parzialmente trasparente per effetto lampeggio */
-    text-shadow: none; /* ombra spenta */
+    opacity: 0.5;
+    text-shadow: none;
   }
 }
