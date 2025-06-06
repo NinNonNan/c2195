@@ -9,7 +9,137 @@ body {
   flex-direction: column; /* impila header, container, footer verticalmente */
 }
 
-/* --- HEADER --- */
+/* --- HEADER --- *//* Font e reset base */
+body {
+  font-family: 'Share Tech Mono', monospace, monospace;
+  background: #001122;
+  color: #eee;
+  margin: 0;
+  padding: 0;
+}
+
+a.link {
+  color: #0ff;
+  text-decoration: none;
+}
+a.link:hover,
+a.link:focus {
+  text-decoration: underline;
+  outline: none;
+}
+
+/* Container per il contenuto centrale */
+.container {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 1rem;
+  background: #002233;
+}
+
+/* Header e Footer full width */
+header, footer {
+  width: 100%;
+  background: #001122;
+  color: #0ff;
+  padding: 1rem 0;
+  text-align: center;
+}
+
+/* Effetto flickering neon solo su h1 e h2 */
+@keyframes flicker {
+  0%, 19%, 21%, 23%, 25%, 54%, 56%, 100% {
+    text-shadow:
+      0 0 7px #0ff,
+      0 0 20px #0ff,
+      0 0 30px #0ff,
+      0 0 40px #0ff,
+      0 0 50px #0ff;
+    color: #0ff;
+  }
+  20%, 22%, 24%, 55% {
+    text-shadow: none;
+    color: #033;
+  }
+}
+
+h1, h2 {
+  animation: flicker 3s infinite alternate;
+}
+
+/* Migliore leggibilità dei titoli */
+h1 {
+  font-size: 2.5rem;
+  margin-bottom: 0.2rem;
+}
+h2 {
+  font-size: 1.8rem;
+  margin-top: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+
+/* Liste */
+ul {
+  padding-left: 1.5rem;
+  line-height: 1.5;
+}
+
+/* Footer gattino */
+
+.gattino-trigger {
+  display: inline-block;
+  width: 2rem;
+  height: 2rem;
+  margin-left: 1rem;
+  vertical-align: middle;
+  background: transparent;
+  border: 2px solid #0ff;
+  border-radius: 4px;
+  cursor: pointer;
+  position: relative;
+  outline-offset: 3px;
+}
+
+/* Focus visibile per accessibilità */
+.gattino-trigger:focus {
+  outline: 3px solid #0ff;
+}
+
+/* Gattino nascosto inizialmente */
+.hidden-cat {
+  display: inline-block;
+  margin-left: 0.5rem;
+  font-size: 2rem;
+  color: #0ff;
+  text-shadow:
+    0 0 5px #0ff,
+    0 0 10px #0ff,
+    0 0 15px #0ff;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease-in-out;
+  user-select: none;
+}
+
+/* Mostra il gattino quando si passa col mouse o si focalizza il trigger */
+.gattino-trigger:hover + .hidden-cat,
+.gattino-trigger:focus + .hidden-cat {
+  opacity: 1;
+  pointer-events: auto;
+  animation: flicker 3s infinite alternate;
+}
+
+/* Screen reader only class per testo nascosto */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+}
+
 /* Header prende tutta la larghezza della pagina */
 header {
   background: #001122; /* blu molto scuro */
