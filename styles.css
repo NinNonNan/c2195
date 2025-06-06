@@ -108,15 +108,20 @@ footer {
 }
 
 .hidden-cat {
-  position: fixed; /* rimane sempre visibile in basso a destra */
+  position: fixed;
   bottom: 10px;
   right: 10px;
-  font-size: 2rem;
-  opacity: 0;
-  pointer-events: none; /* non interferisce col mouse */
-  transition: opacity 0.3s ease;
+  font-size: 2.5rem;
+  color: #00ccff; /* blu elettrico neon */
+  text-shadow:
+    0 0 5px #00ccff,
+    0 0 10px #00ccff,
+    0 0 20px #00ccff,
+    0 0 40px #00ccff;
+  animation: flicker 3s infinite;
   cursor: default;
   user-select: none;
+  opacity: 0.7;
 }
 
 footer:hover .hidden-cat {
