@@ -1,107 +1,123 @@
+/* ============================= */
+/*      STILI GENERALI           */
+/* ============================= */
+
+/* Reset margin e imposta background e font generali */
 body {
-  margin: 0; 
-  background: #0f0f14; 
-  color: #00ff66;
-  font-family: 'Share Tech Mono', monospace;
+  margin: 0;                       /* Rimuove margini di default */
+  background: #0f0f14;            /* Sfondo molto scuro quasi nero/blu notte */
+  color: #00ccff;                 /* Colore testo blu elettrico brillante */
+  font-family: 'Share Tech Mono', monospace; /* Font monospace, stile tech/cyberpunk */
   display: flex;
   flex-direction: column;
-  min-height: 100vh;
+  min-height: 100vh;              /* Altezza minima: tutta finestra */
 }
 
+/* ============================= */
+/*          HEADER               */
+/* ============================= */
+
+/* Contenitore header con sfondo scuro più acceso */
 header {
-  background: #001100;
-  padding: 2rem;
-  text-align: center;
-  border-bottom: 2px solid #00ff66;
+  background: #001122;            /* Blu scurissimo */
+  padding: 2rem;                  /* Spaziatura interna */
+  text-align: center;             /* Centra testo */
+  border-bottom: 2px solid #00ccff; /* Bordo blu elettrico netto sotto */
 }
 
+/* Titolo principale con dimensioni grandi e neon */
 header h1 {
-  margin: 0;
-  font-size: 3rem;
+  margin: 0;                     /* Nessun margine sopra o sotto */
+  font-size: 3rem;               /* Testo molto grande */
+  /* Ombra testo per effetto neon */
   text-shadow:
-    0 0 5px #00ff66,
-    0 0 10px #00ff66,
-    0 0 20px #00ff66,
-    0 0 40px #00ff66;
-  animation: flicker 3s infinite;
+    0 0 5px #00ccff,
+    0 0 10px #00ccff,
+    0 0 20px #00ccff,
+    0 0 40px #00ccff;
+  animation: flicker 3s infinite; /* Animazione lampeggio */
 }
 
+/* Sottotitolo/paragrafo sotto titolo */
 header p {
-  margin-top: 0.5rem;
-  font-size: 1.2rem;
-  color: #33ff99;
+  margin-top: 0.5rem;           /* Spazio sopra */
+  font-size: 1.2rem;            /* Dimensione leggermente più piccola */
+  color: #33ddff;               /* Colore azzurro chiaro */
 }
 
-main {
-  flex: 1;
-  padding: 2rem 4rem;
-  max-width: 900px;
-  margin: auto;
-}
+/* ============================= */
+/*          SEZIONI              */
+/* ============================= */
 
-section {
-  margin-bottom: 3rem;
-}
-
+/* Titoli sezioni h2 con bordo colorato e maiuscole */
 h2 {
-  border-left: 5px solid #00ff66;
-  padding-left: 0.8rem;
-  text-transform: uppercase;
-  letter-spacing: 2px;
-  font-size: 1.8rem;
-  margin-bottom: 1rem;
-  color: #00ff66;
+  border-left: 5px solid #00ccff;  /* Linea a sinistra */
+  padding-left: 0.8rem;             /* Spazio tra testo e linea */
+  text-transform: uppercase;        /* Tutto maiuscolo */
+  letter-spacing: 2px;              /* Spaziatura tra lettere */
+  font-size: 1.8rem;                /* Dimensione media */
+  margin-bottom: 1rem;              /* Spazio sotto */
+  color: #00ccff;                   /* Blu elettrico */
+  /* Ombra neon leggero */
   text-shadow:
-    0 0 3px #00ff66,
-    0 0 8px #00ff66;
-  animation: flicker 3s infinite;
+    0 0 3px #00ccff,
+    0 0 8px #00ccff;
+  animation: flicker 3s infinite;  /* Animazione lampeggio */
 }
 
-p {
-  line-height: 1.5;
-  color: #aaffbb;
-}
-
+/* Lista senza pallini, colore e spaziatura */
 ul {
-  list-style-type: none;
-  padding-left: 0;
-  color: #55ff88;
+  list-style-type: none;            /* Rimuove i bullet points */
+  padding-left: 0;                  /* Nessun padding sinistro */
+  color: #33ccff;                   /* Azzurro chiaro */
 }
 
+/* Elementi della lista */
 ul li {
-  margin: 0.5rem 0;
-  text-transform: uppercase;
-  letter-spacing: 1.5px;
-  text-shadow: 0 0 4px #00ff66;
-  animation: flicker 3s infinite;
+  margin: 0.5rem 0;                 /* Spazio verticale tra elementi */
+  text-transform: uppercase;        /* Maiuscole */
+  letter-spacing: 1.5px;            /* Spaziatura lettere */
+  /* Ombra neon leggera */
+  text-shadow: 0 0 4px #00ccff;
+  animation: flicker 3s infinite;  /* Animazione lampeggio */
 }
 
+/* Link con sottolineatura e colore blu */
 .link {
-  color: #00ff66;
-  text-decoration: underline;
+  color: #00ccff;                  /* Blu elettrico */
+  text-decoration: underline;     /* Sottolineato */
 }
 
+/* ============================= */
+/*          FOOTER               */
+/* ============================= */
+
+/* Footer semplice con sfondo e bordo blu */
 footer {
-  text-align: center;
-  padding: 1rem;
-  background: #001100;
-  border-top: 2px solid #00ff66;
-  color: #007733;
-  font-size: 0.9rem;
+  text-align: center;              /* Centra testo */
+  padding: 1rem;                  /* Spaziatura interna */
+  background: #001122;            /* Blu scuro */
+  border-top: 2px solid #00ccff; /* Bordo superiore blu elettrico */
+  color: #005577;                 /* Blu scuro/verde */
+  font-size: 0.9rem;              /* Dimensione testo ridotta */
 }
 
-/* Neon flicker animation */
+/* ============================= */
+/*      ANIMAZIONE FLICKER       */
+/* ============================= */
+
+/* Simula un effetto neon lampeggiante e intermittente */
 @keyframes flicker {
   0%, 19%, 21%, 23%, 25%, 54%, 56%, 100% {
-    opacity: 1;
+    opacity: 1; /* Testo pienamente visibile */
     text-shadow:
-      0 0 5px #00ff66,
-      0 0 10px #00ff66,
-      0 0 20px #00ff66,
-      0 0 40px #00ff66;
+      0 0 5px #00ccff,
+      0 0 10px #00ccff,
+      0 0 20px #00ccff,
+      0 0 40px #00ccff; /* Ombra neon accesa */
   }
   20%, 22%, 24%, 55% {
-    opacity: 0.5;
-    text-shadow: none;
+    opacity: 0.5; /* Testo leggermente più trasparente */
+    text-shadow: none; /* Ombra spenta */
   }
 }
