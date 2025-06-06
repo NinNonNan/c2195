@@ -113,7 +113,7 @@ footer {
   }
 }
 
-/* Applichiamo l’animazione flicker solo a h1 e h2 */
+/* Applichiamo l’animazione flicker solo a h1 */
 h1 {
   animation: flicker 3s infinite alternate;
 }
@@ -151,6 +151,30 @@ h1 {
       0 0 28px #33ffff;
     color: #33ffff;
   }
+}
+
+/* Neon statico rosso sangue per Bleeding City */
+.bleeding-city-neon {
+  color: #b30000;
+  text-shadow:
+    0 0 5px #b30000,
+    0 0 10px #b30000,
+    0 0 20px #ff0000,
+    0 0 30px #ff1a1a,
+    0 0 40px #ff4d4d,
+    0 0 50px #ff6666;
+}
+
+/* Neon statico blu ghiaccio per Orbital Dystopia */
+.orbital-dystopia-neon {
+  color: #3a7bd5;
+  text-shadow:
+    0 0 5px #3a7bd5,
+    0 0 10px #3a7bd5,
+    0 0 20px #5aa0ff,
+    0 0 30px #7bb8ff,
+    0 0 40px #9bd5ff,
+    0 0 50px #bbe8ff;
 }
 
 /* Trigger invisibile ma accessibile per il gattino (easter egg) */
