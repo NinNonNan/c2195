@@ -56,6 +56,7 @@ main h2 {
   font-size: 1.8rem;
   margin-bottom: 0.7rem;
   /* animation: flicker 3s infinite alternate; */
+  animation: vibrate 0.3s linear infinite;
 }
 
 /* Paragrafi e liste con colore e dimensioni leggibili */
@@ -115,6 +116,45 @@ footer {
 /* Applichiamo l’animazione flicker solo a h1 e h2 */
 h1 {
   animation: flicker 3s infinite alternate;
+}
+
+@keyframes vibrate {
+  0%, 100% {
+    transform: translate(0, 0);
+    text-shadow:
+      0 0 5px #0ff,
+      0 0 10px #0ff,
+      0 0 15px #0ff,
+      0 0 20px #0ff;
+    color: #0ff;
+  }
+  25% {
+    transform: translate(-1px, 1px);
+    text-shadow:
+      0 0 7px #33ffff,
+      0 0 14px #33ffff,
+      0 0 21px #33ffff,
+      0 0 28px #33ffff;
+    color: #33ffff;
+  }
+  50% {
+    transform: translate(1px, -1px);
+    text-shadow:
+      0 0 5px #0ff,
+      0 0 10px #0ff,
+      0 0 15px #0ff,
+      0 0 20px #0ff;
+    color: #0ff;
+  }
+  75% {
+    transform: translate(-1px, 1px);
+    text-shadow:
+      0 0 7px #33ffff,
+      0 0 14px #33ffff,
+      0 0 21px #33ffff,
+      0 0 28px #33ffff;
+    color: #33ffff;
+  }
 }
 
 /* Trigger invisibile ma accessibile per il gattino (easter egg) */
