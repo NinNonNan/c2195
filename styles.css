@@ -1,123 +1,101 @@
-/* ============================= */
-/*      STILI GENERALI           */
-/* ============================= */
-
-/* Reset margin e imposta background e font generali */
+/* Corpo della pagina: sfondo scuro, testo blu elettrico, font monospaziato */
+/* Flexbox verticale per layout generale */
 body {
-  margin: 0;                       /* Rimuove margini di default */
-  background: #0f0f14;            /* Sfondo molto scuro quasi nero/blu notte */
-  color: #00ccff;                 /* Colore testo blu elettrico brillante */
-  font-family: 'Share Tech Mono', monospace; /* Font monospace, stile tech/cyberpunk */
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;              /* Altezza minima: tutta finestra */
+  margin: 0; /* rimuove margini di default */
+  background: #0f0f14; /* sfondo quasi nero */
+  color: #00ccff; /* testo blu elettrico */
+  font-family: 'Share Tech Mono', monospace; /* font monospace in stile tech */
+  display: flex; /* attiva flexbox */
+  flex-direction: column; /* disporre gli elementi in colonna verticale */
+  min-height: 100vh; /* altezza minima: viewport intera */
 }
 
-/* ============================= */
-/*          HEADER               */
-/* ============================= */
-
-/* Contenitore header con sfondo scuro più acceso */
+/* Header: sfondo scuro, padding, testo centrato, bordo inferiore neon */
 header {
-  background: #001122;            /* Blu scurissimo */
-  padding: 2rem;                  /* Spaziatura interna */
-  text-align: center;             /* Centra testo */
-  border-bottom: 2px solid #00ccff; /* Bordo blu elettrico netto sotto */
+  background: #001122; /* blu molto scuro */
+  padding: 2rem; /* spazio interno */
+  text-align: center; /* testo centrato */
+  border-bottom: 2px solid #00ccff; /* linea neon blu elettrico sotto */
 }
 
-/* Titolo principale con dimensioni grandi e neon */
+/* Titolo nell'header: grande, nessun margine, effetto neon con ombra e flicker */
 header h1 {
-  margin: 0;                     /* Nessun margine sopra o sotto */
-  font-size: 3rem;               /* Testo molto grande */
-  /* Ombra testo per effetto neon */
-  text-shadow:
+  margin: 0; /* rimuove margine superiore/inferiore */
+  font-size: 3rem; /* dimensione molto grande */
+  text-shadow: /* ombra luminosa per effetto neon */
     0 0 5px #00ccff,
     0 0 10px #00ccff,
     0 0 20px #00ccff,
     0 0 40px #00ccff;
-  animation: flicker 3s infinite; /* Animazione lampeggio */
+  animation: flicker 3s infinite; /* animazione flicker neon */
 }
 
-/* Sottotitolo/paragrafo sotto titolo */
+/* Paragrafo sotto titolo: margine superiore piccolo, colore azzurro più chiaro */
 header p {
-  margin-top: 0.5rem;           /* Spazio sopra */
-  font-size: 1.2rem;            /* Dimensione leggermente più piccola */
-  color: #33ddff;               /* Colore azzurro chiaro */
+  margin-top: 0.5rem; /* piccolo spazio sopra */
+  font-size: 1.2rem; /* dimensione media */
+  color: #33ddff; /* azzurro chiaro */
 }
 
-/* ============================= */
-/*          SEZIONI              */
-/* ============================= */
-
-/* Titoli sezioni h2 con bordo colorato e maiuscole */
+/* Titoli di secondo livello: bordo sinistro neon, maiuscolo, spaziatura lettere */
 h2 {
-  border-left: 5px solid #00ccff;  /* Linea a sinistra */
-  padding-left: 0.8rem;             /* Spazio tra testo e linea */
-  text-transform: uppercase;        /* Tutto maiuscolo */
-  letter-spacing: 2px;              /* Spaziatura tra lettere */
-  font-size: 1.8rem;                /* Dimensione media */
-  margin-bottom: 1rem;              /* Spazio sotto */
-  color: #00ccff;                   /* Blu elettrico */
-  /* Ombra neon leggero */
-  text-shadow:
+  border-left: 5px solid #00ccff; /* barra neon a sinistra */
+  padding-left: 0.8rem; /* spazio tra bordo e testo */
+  text-transform: uppercase; /* tutto maiuscolo */
+  letter-spacing: 2px; /* distanza tra lettere */
+  font-size: 1.8rem; /* dimensione titolo */
+  margin-bottom: 1rem; /* spazio sotto */
+  color: #00ccff; /* blu elettrico */
+  text-shadow: /* ombra neon */
     0 0 3px #00ccff,
     0 0 8px #00ccff;
-  animation: flicker 3s infinite;  /* Animazione lampeggio */
+  animation: flicker 3s infinite; /* animazione flicker */
 }
 
-/* Lista senza pallini, colore e spaziatura */
+/* Lista senza pallini e senza padding a sinistra, testo azzurro */
 ul {
-  list-style-type: none;            /* Rimuove i bullet points */
-  padding-left: 0;                  /* Nessun padding sinistro */
-  color: #33ccff;                   /* Azzurro chiaro */
+  list-style-type: none; /* elimina i marker standard */
+  padding-left: 0; /* rimuove padding */
+  color: #33ccff; /* colore azzurro */
 }
 
-/* Elementi della lista */
+/* Elementi lista: margine verticale, maiuscolo, spaziatura, ombra neon flicker */
 ul li {
-  margin: 0.5rem 0;                 /* Spazio verticale tra elementi */
-  text-transform: uppercase;        /* Maiuscole */
-  letter-spacing: 1.5px;            /* Spaziatura lettere */
-  /* Ombra neon leggera */
-  text-shadow: 0 0 4px #00ccff;
-  animation: flicker 3s infinite;  /* Animazione lampeggio */
+  margin: 0.5rem 0; /* spazio sopra e sotto */
+  text-transform: uppercase; /* maiuscolo */
+  letter-spacing: 1.5px; /* spaziatura lettere */
+  text-shadow: 0 0 4px #00ccff; /* ombra neon */
+  animation: flicker 3s infinite; /* animazione flicker */
 }
 
-/* Link con sottolineatura e colore blu */
+/* Link: colore blu elettrico, sottolineato */
 .link {
-  color: #00ccff;                  /* Blu elettrico */
-  text-decoration: underline;     /* Sottolineato */
+  color: #00ccff; /* colore link */
+  text-decoration: underline; /* sottolineatura */
 }
 
-/* ============================= */
-/*          FOOTER               */
-/* ============================= */
-
-/* Footer semplice con sfondo e bordo blu */
+/* Footer: testo centrato, sfondo scuro, bordo superiore neon, colore più scuro */
 footer {
-  text-align: center;              /* Centra testo */
-  padding: 1rem;                  /* Spaziatura interna */
-  background: #001122;            /* Blu scuro */
-  border-top: 2px solid #00ccff; /* Bordo superiore blu elettrico */
-  color: #005577;                 /* Blu scuro/verde */
-  font-size: 0.9rem;              /* Dimensione testo ridotta */
+  text-align: center; /* testo centrato */
+  padding: 1rem; /* padding interno */
+  background: #001122; /* sfondo blu scuro */
+  border-top: 2px solid #00ccff; /* bordo superiore neon */
+  color: #005577; /* blu scuro più spento */
+  font-size: 0.9rem; /* testo più piccolo */
 }
 
-/* ============================= */
-/*      ANIMAZIONE FLICKER       */
-/* ============================= */
-
-/* Simula un effetto neon lampeggiante e intermittente */
+/* Animazione flicker per effetto neon lampeggiante */
 @keyframes flicker {
   0%, 19%, 21%, 23%, 25%, 54%, 56%, 100% {
-    opacity: 1; /* Testo pienamente visibile */
+    opacity: 1; /* completamente visibile */
     text-shadow:
       0 0 5px #00ccff,
       0 0 10px #00ccff,
       0 0 20px #00ccff,
-      0 0 40px #00ccff; /* Ombra neon accesa */
+      0 0 40px #00ccff; /* ombra neon */
   }
   20%, 22%, 24%, 55% {
-    opacity: 0.5; /* Testo leggermente più trasparente */
-    text-shadow: none; /* Ombra spenta */
+    opacity: 0.5; /* parzialmente trasparente per effetto lampeggio */
+    text-shadow: none; /* ombra spenta */
   }
 }
